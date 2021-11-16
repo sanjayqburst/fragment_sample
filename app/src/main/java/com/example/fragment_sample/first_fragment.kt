@@ -23,8 +23,8 @@ class FirstFragment : Fragment() {
             val fragment=SecondFragment()
             val textData:EditText=view.findViewById(R.id.fragment1text)
             val bundle=Bundle()
-            bundle.
-            fragment.arguments=bundle.putString("data",textData.text.toString())
+            bundle.putString("data",textData.text.toString())
+            fragment.arguments=bundle
             fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainer,fragment)?.commit()
         }
         // Inflate the layout for this fragment
