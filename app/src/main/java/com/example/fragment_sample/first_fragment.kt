@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.fragment.app.FragmentManager
 
 
 class FirstFragment : Fragment() {
@@ -25,7 +26,7 @@ class FirstFragment : Fragment() {
             val bundle=Bundle()
             bundle.putString("data",textData.text.toString())
             fragment.arguments=bundle
-            fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainer,fragment)?.commit()
+            requireActivity().supportFragmentManager?.beginTransaction()?.replace(R.id.fragmentContainer,fragment)?.commit()
         }
         // Inflate the layout for this fragment
         return view
